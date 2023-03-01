@@ -18,7 +18,7 @@ public class Program {
 			AplicantReader aplicantReader = new ElevReader();
 
 			listaElevi = aplicantReader.readAplicants("elevi.txt");
-			for(Aplicant aplicant :listaAngajati)
+			for(Aplicant aplicant : listaElevi)
 				System.out.println(aplicant.toString());
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
