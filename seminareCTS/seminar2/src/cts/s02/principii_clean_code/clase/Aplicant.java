@@ -9,6 +9,8 @@ public abstract class Aplicant{
 	protected int punctaj;
 	protected int nr_proiecte;
 	protected String[] denumireProiect;
+
+	private static int pragPunctaj = 80;
 	
 	
 	public String getNume() {
@@ -30,11 +32,9 @@ public abstract class Aplicant{
 		this.varsta = varsta;
 	}
 	public void statut(){
-		if(punctaj>80)
-			System.out.println("Aplicantul "+nume+" "+prenume+" a fost acceptat.");
-		else
-			System.out.println("Aplicantul "+nume+" "+prenume+" nu a fost acceptat.");
-		}
+		System.out.println("Aplicantul "+nume+" "+prenume+
+				((this.pragPunctaj> Aplicant.pragPunctaj) ? "" : "nu") + " a fost acceptat.");
+	}
 	public int getPunctaj() {
 		return punctaj;
 	}
@@ -86,4 +86,6 @@ public abstract class Aplicant{
 	protected void afisareFinantare(int sumaFinantata, String tipAplicant) {
 		System.out.println(tipAplicant + " " + this.nume+ " "+ this.prenume +" primeste " + sumaFinantata +" Euro/zi in proiect.");
 	}
+
+
 }
