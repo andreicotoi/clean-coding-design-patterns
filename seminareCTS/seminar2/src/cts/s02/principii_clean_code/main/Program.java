@@ -16,10 +16,11 @@ public class Program {
 		List<Aplicant> listaElevi;
 		try {
 			AplicantReader aplicantReader = new ElevReader();
-
 			listaElevi = aplicantReader.readAplicants("elevi.txt");
-			for(Aplicant aplicant : listaElevi)
+			for(Aplicant aplicant : listaElevi) {
 				System.out.println(aplicant.toString());
+				aplicant.afisareFinantare();
+			}
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
