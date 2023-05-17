@@ -1,28 +1,34 @@
 package restaurant.adapter.main;
 
+import restaurant.adapter.bar.ISoftBar;
 import restaurant.adapter.bar.SoftBar;
-import restaurant.adapter.bar.iSoftBar;
+import restaurant.adapter.bucatarie.AdapterObiecteRestaurant;
 import restaurant.adapter.bucatarie.AdapterRestaurant;
 import restaurant.adapter.bucatarie.Bucatarie;
-import restaurant.adapter.bucatarie.iSoftRestaurant;
+import restaurant.adapter.bucatarie.ISoftBucatarie;
 
+//restaurant ex 5
 public class Main {
 
-    public static void imprimare(iSoftRestaurant restaurant, double suma) {
-        restaurant.printeazaNota(suma);
+    public static void imprimare(ISoftBucatarie bucatarie, double valoare) {
+        bucatarie.printeazaNota(valoare);
     }
 
     public static void main(String[] args) {
-        iSoftBar bar = new SoftBar("Alcadibo");
-//        bar.printeazaNotaBauturi(240);
+        ISoftBar bar = new SoftBar("bar1");
+//        bar.printezaNotaBauturi(240);
 
-        iSoftRestaurant bucatarie = new Bucatarie("George");
+        ISoftBucatarie bucatarie = new Bucatarie("Alfredo");
 //        bucatarie.printeazaNota(300);
 
-//        Main.imprimare(bar, 300);
+        //eroare. pentru asta avem adapter
+//        Main.imprimare(bar,300);
         Main.imprimare(bucatarie, 500);
 
-        AdapterRestaurant adapterRestaurant = new AdapterRestaurant("Alcadibo");
-        adapterRestaurant.printeazaNota(500);
+        AdapterRestaurant adapterRestaurant = new AdapterRestaurant("bar1");
+        Main.imprimare(adapterRestaurant, 369);
+
+        AdapterObiecteRestaurant adapterObiecteRestaurant = new AdapterObiecteRestaurant(bar);
+        Main.imprimare(adapterObiecteRestaurant, 250);
     }
 }

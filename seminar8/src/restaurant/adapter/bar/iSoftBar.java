@@ -1,5 +1,5 @@
 package restaurant.adapter.bar;
 
-public interface iSoftBar {
-    void printeazaNotaBauturi(double totalSuma);
+public interface ISoftBar {
+    void printezaNotaBauturi(double totalPlata);
 }

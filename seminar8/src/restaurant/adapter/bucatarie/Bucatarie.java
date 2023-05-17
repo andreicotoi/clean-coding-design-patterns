@@ -1,6 +1,6 @@
 package restaurant.adapter.bucatarie;
 
-public class Bucatarie implements iSoftRestaurant {
+public class Bucatarie implements ISoftBucatarie {
     private String numeBucatar;
 
     public Bucatarie(String numeBucatar) {
@@ -8,8 +8,8 @@ public class Bucatarie implements iSoftRestaurant {
     }
 
     @Override
-    public void printeazaNota(double totalSuma) {
+    public void printeazaNota(double totalPlata) {
         System.out.println("Bucatarul " + this.numeBucatar);
-        System.out.println("Nota dumneavoastra este in valoare de " + totalSuma);
+        System.out.println("Nota dvs. este in valoare de " + totalPlata);
     }
 }
