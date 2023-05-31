@@ -4,6 +4,7 @@ import dubluri.FakePersoana;
 import dubluri.StubPersoanaMajora;
 import dubluri.StubPersoanaMinora;
 import model.PachetTuristic;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -11,6 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AplicaDiscountTest {
+    @Tag("tag1")
     @Test
     void NuSeAplicaDiscountTest() {
         FakePersoana fakePersoana = new FakePersoana();
@@ -20,6 +22,7 @@ public class AplicaDiscountTest {
         assertEquals(150, pachetTuristic.getPret());
     }
 
+    @Tag("tag2")
     @Test
     void SeAplicaDiscountTest() {
         FakePersoana fakePersoana = new FakePersoana();
